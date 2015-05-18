@@ -465,13 +465,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Single file, header-only library.</p>
 </li>
 <li>
-<p>A smaller API taking advantage of C++ overloading.</p>
-</li>
-<li>
-<p>RAII abstractions database connections and prepared statements.</p>
+<p>RAII abstractions for database connections and prepared statements.</p>
 </li>
 <li>
 <p>Reusability of prepared statements for fast batch inserts.</p>
+</li>
+<li>
+<p>A smaller API taking advantage of C++ overloading.</p>
 </li>
 </ul>
 </div></div></td>
@@ -488,6 +488,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>No support for NULL values (yet)</p>
+</li>
+<li>
+<p>Error checking needs work</p>
+</li>
+<li>
+<p>Not well tested; still experimental</p>
 </li>
 </ul>
 </div></div></td>
@@ -630,7 +636,7 @@ public:
 <h2 id="_philosophy">Philosophy</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The design philosophy behind SQLambda is to provide an efficient pipeline between SQLite database operations and modern-style C++ programming constructs for the most common use cases. In particular, we want to provide fast mechanisms for repeated inserts with prepared statements, and provide convenient processing of the rows returned by SELECT statements.</p>
+<p>The design philosophy behind SQLambda is to provide an efficient pipeline between SQLite database operations and modern-style C++ programming constructs for the most common use cases. In particular, we want to provide fast mechanisms for repeated inserts with prepared statements, and provide convenient processing of the rows returned by <code>SELECT</code> statements.</p>
 </div>
 <div class="paragraph">
 <p>No attempt is made to wrap the entire functionality of the SQLite C interface with C++. This decision is motivated by the desire to prevent needlessly reinventing the interface language. We simply want to allow modern idioms for common operations. For uncommon operations the well-documented C API provided by SQLite should suffice; for this reason we make sure our interface transparently exposes the underlying C API rather than attempting to invent our own abstractions.</p>
@@ -765,7 +771,7 @@ public:
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2015-05-18 17:10:48 EDT
+Last updated 2015-05-18 17:17:49 EDT
 </div>
 </div>
 </body>
